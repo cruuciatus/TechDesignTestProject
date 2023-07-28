@@ -1,18 +1,16 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.EventSystems;
+
 
 public class ClickForAnimation : MonoBehaviour
 {
-     [SerializeField] private Animator _animator;
+     [SerializeField] protected Animator _animator;
 
-    private void Start()
+    protected virtual void Start()
     {
         _animator = GetComponent<Animator>();
 
     }
-    public void Update()
+    protected virtual void Update()
     {
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {

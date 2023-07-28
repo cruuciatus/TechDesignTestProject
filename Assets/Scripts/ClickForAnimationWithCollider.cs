@@ -1,18 +1,18 @@
-
-using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class ClickForAnimationWithCollider : MonoBehaviour, IPointerClickHandler
+public class ClickForAnimationWithCollider : ClickForAnimation, IPointerClickHandler
 {
-    [SerializeField] private Animator _animator;
 
-    private void Start()
+    protected override void Start()
     {
-        _animator = GetComponent<Animator>();
+        base.Start();
 
     }
-    
+   
+    protected override void Update()
+    {
 
+    }
     public void OnPointerClick(PointerEventData eventData)
     {
         _animator.enabled = true;
